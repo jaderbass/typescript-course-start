@@ -35,6 +35,8 @@ Für den Kurs die minimalen Einstellungen für die `tsconfig.json` übernehmen:
     "module": "es2020",
     "target": "es2020",
     "strict": true
-  }
+  },
+  "include": ["**/*.ts"],
+  "exclude": [".vscode","node_modules"]
 }
 ```

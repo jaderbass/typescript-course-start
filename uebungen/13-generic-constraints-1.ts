@@ -1,19 +1,23 @@
 // 13-generic-constraints-1.ts
 /**
- * Aufgaben:
- * 1) Implementiere `pluck<T, K extends keyof T>(obj: T, key: K): T[K]`
- * 2) Implementiere `hasId<T extends { id: string }>(x: T): string`
+ * Aufgabe:
+ * Implementiere `pluck`.
+ *
+ * Ziel:
+ * - Die Funktion soll einen Wert aus einem Objekt zurückgeben
+ * - Der Key soll als String übergeben werden
+ *
+ * Hinweis:
+ * - TypeScript meckert aktuell – finde heraus, warum
+ * - Passe die Typen so an, dass es sicher wird
  */
 
-export function pluck<T, K extends keyof T>(obj: T, key: K): T[K] {
+export function pluck(obj: unknown, key: string) {
   // TODO
-  return obj[key];
+  return undefined;
 }
 
-export function hasId<T extends { id: string }>(x: T): string {
-  // TODO
-  return x.id;
-}
-
-console.log(pluck({ a: 1, b: "x" }, "b") === "x");
-console.log(hasId({ id: "p1", title: "Test" }) === "p1");
+// Tests
+pluck({ a: 1, b: "x" }, "b");
+pluck({ a: 1 }, "a");
+// pluck({ a: 1 }, "c"); // soll ein TS-Fehler sein

@@ -40,3 +40,20 @@ Für den Kurs die minimalen Einstellungen für die `tsconfig.json` übernehmen:
   "exclude": [".vscode","node_modules"]
 }
 ```
+
+## Remote-Repo übernehmen und dessen Stand ziehen
+
+Wenn das Remote bereits Inhalte hat (README, CI, etc.):
+
+```bash
+git remote add origin git@github.com:USER/REPO.git
+git fetch origin
+git merge origin/main --allow-unrelated-histories
+```
+
+Danach:
+
+```bash
+git push -u origin main
+
+```

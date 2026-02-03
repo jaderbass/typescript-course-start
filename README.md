@@ -24,3 +24,17 @@ npm init
 npm install
 tsc -init
 ```
+
+## `tsconfig` anpassen
+
+Für den Kurs die minimalen Einstellungen für die `tsconfig.json` übernehmen:
+
+```json
+{
+  "compilerOptions": {
+    "module": "es2020",
+    "target": "es2020",
+    "strict": true
+  }
+}
+```
